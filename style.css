@@ -1,0 +1,368 @@
+/* Making default margin and padding 0*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fugaz One', cursive;
+    font-family: 'Patua One', cursive;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Slab', serif;
+}
+/* Stlying the first section with class header*/
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(images/agbanner.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+/* Styling the navigation Bar*/
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Styling the logo*/
+nav img {
+    width: 150px;
+}
+/* /* Styling the link*/
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+/* Styling the menu*/
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 16px;
+    position: relative;
+}
+/* Styling the menu link*/
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+} 
+
+.nav-links ul li::after {
+    content: '';
+    width: 0%; /* Any increment in number give it a line at the bottom*/
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s; /* this make the content area animated*/
+}
+/* when hover the transition takes effect and make the bottom width changed*/
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+/* text-box container*/
+.text-box {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%; /*this determine hiow far the absolute*/
+    left: 50%;
+    transform: translate(-50%,-50%); /* It will be at the center of the div*/
+    text-align: center;
+}
+/* for the title*/
+.text-box h1 {
+    font-size: 62px;
+}
+.text-box p {
+    margin: 10px 0 40px; /*10px top, opx for left and right, 40px for bottom*/
+    font-size: 14px;
+    color: #fff;
+}
+/*styling the button*/
+.visit-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px; /*12px top and bottom, 34px for right and left*/
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+/*hover effect*/
+.visit-btn:hover {
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
+/*this make the display icon menu in mobile view not to display in large view*/
+nav .fa {
+    display: none;
+}
+/*To make it look good, mobile friendly. whatever code add into the mediaquery will make the pixels and less than or equall to the pixels*/
+@media (max-width: 700px) {
+    .text-box h1 {
+        font-size: 20px;
+    }
+    /* the menu*/
+    .nav-links ul li {
+        display: block;
+    }
+    /*when it in mobile view, the menu will not show up in block but by the side with desisgn in following code*/
+    .nav-links {
+        position: absolute;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;/*this makes the menu icon hidden mobile view*/
+        text-align: left;
+        z-index: 2;
+        transition: 1s;/* make it animate in 1s */
+    }
+    /*making the nav icon menu show for the smaller screen*/
+    nav .fa {
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    /*adding some space to the menu links*/
+    .nav-links ul{
+        padding: 30px;
+    }
+}
+.intro {
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    padding: 50px;
+}
+
+.intro img {
+    float: right;
+    width: 400px;
+    height: 520px;
+}
+
+/*Services*/
+.services {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 100px;
+}
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+p {
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+/*styling the div container with class row*/
+.row {
+    margin-top: 5%;
+    display: flex; /*Flex makes the content to be side by side instead of below each other which is block*/
+    justify-content: space-between;
+}
+/*styling the div container for each service*/
+.service-col {
+    flex-basis: 31%;/*makes th paragraph in 0 red, the top is longer than the next*/
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transform: 0.5s;
+}
+h3 {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 10px o;
+}
+/*hover*/
+.service-col:hover {
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+/*for mobile view*/
+@media(max-width: 700px) {
+    .row {
+        flex-direction: column;
+    }
+    /* .row2 { 
+        flex-direction: column;
+    } */
+}
+/* product */
+ .product {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+    color: #000;
+}
+/* product-col */
+.product-col {
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-col img {
+    width:100%;
+    display: block; /*this makes the color bottom brown/round*/
+}
+/* layer */
+.layer {
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.layer:hover {
+    background: rgba(266,0,0,0.7);   
+}
+
+.layer h3 {
+    width: 100%;
+    font-weight: 700px; /*makes the text to become more bold*/
+    color: #fff;
+    font-size: 20px;
+    bottom: 0; /*this makes the padding bottom 0*/
+    left: 50%;
+    transform: translateX(-50%);/*This makes the text to be at the bottom and at the x axis*/
+    position: absolute; /*the absolute position make sit position to desired result*/
+    opacity: 0; /* this will fade/hide the thext and the opacity inthe hover will makes it visible*/
+    transition: 0.5s;
+}
+
+.layer:hover h3 {
+    bottom: 49%; /*This will push the text up */
+    opacity: 1; /*This will makes the text visible when hover*/
+}
+/* project */
+.project {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.project-col {
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%; /*This gives it space*/
+    text-align: left;
+}
+
+
+.project-col img{
+    width: 100%; /*This makes all the images to fit in*/
+    border-radius: 10px;
+    height: 200px;
+}
+
+.project-col p {
+    padding: 0;
+}
+
+.project-col h3 {
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+/* testimonials */
+.testimonials {
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.testimonial-col {
+    flex-basis: 44%; /*Ifex basis is 44 bcuz we have just two colum*/
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #fff3f3;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+}
+
+.testimonial-col img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+/* The fonta awesome icon */
+.testimonial-col, .f {
+    color: #f44336;
+}
+/* to make it look good on smaller screen.
+THe media query can be added in one place, but I'm seperating it to make it easy to understand */
+@media (max-width: 700px) {
+    .testimonial-col img{ /* to reduce the space on smaller screen so as to look good */
+        margin-left: 0; 
+        margin-right: 15px;
+    }
+}
+/* call to action */
+.call-to-action {
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/choice.jpg);
+    background-position: center; /* positioning the image to the center */
+    background-size: cover; /* the size of the background image */
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+/* Heading */
+.call-to-action h1 {
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 0;
+}
+/* reducing the font-size on smaller screen so as to look good */
+@media (max-width: 700px) {
+    .call-to-action h1 {
+        font-size: 24px;
+    }
+
+}
+/* footer */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.icons .fa {
+    color: #f44336;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+
+.fa-heart-o {
+    color:#f44336;
+}
